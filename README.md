@@ -75,6 +75,14 @@ public class Program
         return sum;
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method                        | Job        | Runtime  | Mean       | Error     | StdDev    | Median     | Ratio | RatioSD |
 |------------------------------ |----------- |--------- |-----------:|----------:|----------:|-----------:|------:|--------:|
 | StringSwitchBench             | Job-DDXAAB | .NET 8.0 |   7.044 ns | 0.1661 ns | 0.3575 ns |   7.007 ns |  1.00 |    0.07 |
@@ -89,7 +97,7 @@ public class Program
 | StaticBytesMyEqualsBench      | Job-WLOQWX | .NET 9.0 |  16.243 ns | 0.3189 ns | 0.3412 ns |  16.091 ns |  0.87 |    0.04 |
 | U8BytesBench                  | Job-DDXAAB | .NET 8.0 |   9.424 ns | 0.1999 ns | 0.5300 ns |   9.326 ns |  1.00 |    0.08 |
 | U8BytesBench                  | Job-WLOQWX | .NET 9.0 |   7.160 ns | 0.1011 ns | 0.1038 ns |   7.118 ns |  0.76 |    0.04 |
-
+```
 
 ・**ByteArrayROSSplitBenchmark**　　byte[]をReadOnlySpan<byte>で分けた時と比較したベンチマーク
 
@@ -107,6 +115,13 @@ public class Program
         return sum;
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method                 | Job        | Runtime  | Mean       | Error    | StdDev   | Ratio | RatioSD |
 |----------------------- |----------- |--------- |-----------:|---------:|---------:|------:|--------:|
@@ -114,7 +129,7 @@ public class Program
 | ByteArraySplitBench    | Job-WLOQWX | .NET 9.0 | 1,615.0 ns | 32.23 ns | 64.37 ns |  0.99 |    0.04 |
 | ReadOnlySpanSplitBench | Job-DDXAAB | .NET 8.0 |   453.1 ns |  8.79 ns | 10.80 ns |  1.00 |    0.03 |
 | ReadOnlySpanSplitBench | Job-WLOQWX | .NET 9.0 |   439.8 ns |  3.71 ns |  2.90 ns |  0.97 |    0.02 |
-
+```
 
 ・[**DivShiftBenchmark**](https://gitan.dev/?p=275)　　Int、UInt、Long、ULongの整数の割り算を比較したベンチマーク
 
@@ -128,6 +143,15 @@ public class Program
         }
         return sum;
     }
+
+
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method                 | Job        | Runtime  | Mean     | Error     | StdDev    | Ratio | RatioSD |
 |----------------------- |----------- |--------- |---------:|----------:|----------:|------:|--------:|
@@ -179,9 +203,18 @@ public class Program
 | PowShift100ULongBench  | Job-WLOQWX | .NET 9.0 | 2.268 us | 0.0067 us | 0.0062 us |  0.99 |    0.01 |
 | PowShift1000ULongBench | Job-DDXAAB | .NET 8.0 | 2.288 us | 0.0310 us | 0.0275 us |  1.00 |    0.02 |
 | PowShift1000ULongBench | Job-WLOQWX | .NET 9.0 | 2.267 us | 0.0127 us | 0.0119 us |  0.99 |    0.01 |
-
+```
 
 ・[**ForForeachBenchmark**](https://gitan.dev/?p=180)　　配列かListをfor、foreachで要素を足していくベンチマーク
+
+
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method                  | Job        | Runtime  | Mean      | Error    | StdDev    | Ratio | RatioSD |
 |------------------------ |----------- |--------- |----------:|---------:|----------:|------:|--------:|
@@ -207,7 +240,7 @@ public class Program
 | StackForEachBench       | Job-WLOQWX | .NET 9.0 | 182.40 ns | 3.610 ns |  6.602 ns |  1.01 |    0.05 |
 | QueueForEachBench       | Job-DDXAAB | .NET 8.0 | 222.52 ns | 4.358 ns |  4.475 ns |  1.00 |    0.03 |
 | QueueForEachBench       | Job-WLOQWX | .NET 9.0 | 218.69 ns | 4.135 ns |  3.868 ns |  0.98 |    0.03 |
-
+```
 
 ・[**HighPerformanceStringBenchmark**](https://gitan.dev/?p=336)　　stringの作成を比較したベンチマーク
 
@@ -232,6 +265,15 @@ public class Program
         return new string(chars);
     }
 
+
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method                        | Job        | Runtime  | Mean      | Error     | StdDev    | Median    | Ratio | RatioSD |
 |------------------------------ |----------- |--------- |----------:|----------:|----------:|----------:|------:|--------:|
 | ToHexStringBench              | Job-PUSYPP | .NET 8.0 | 471.57 ns |  7.829 ns |  9.320 ns | 469.43 ns |  1.00 |    0.03 |
@@ -242,6 +284,7 @@ public class Program
 | ToHexString_CreateBench       | Job-FMYSKB | .NET 9.0 |  41.52 ns |  0.786 ns |  1.335 ns |  41.30 ns |  1.05 |    0.03 |
 | ToHexString_CreateUnsafeBench | Job-PUSYPP | .NET 8.0 |  32.07 ns |  0.220 ns |  0.205 ns |  32.06 ns |  1.00 |    0.01 |
 | ToHexString_CreateUnsafeBench | Job-FMYSKB | .NET 9.0 |  34.86 ns |  1.678 ns |  4.869 ns |  33.40 ns |  1.09 |    0.15 |
+```
 
 ・**IntLongUtf8FormatBenchmark**　　int、longをUTF-8バイト配列に変換する方法のベンチマーク
 
@@ -367,6 +410,13 @@ public class Program
         return result;
     }  
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method        | Job        | Runtime  | Mean     | Error     | StdDev    | Median   | Ratio | RatioSD |
 |-------------- |----------- |--------- |---------:|----------:|----------:|---------:|------:|--------:|
@@ -378,7 +428,7 @@ public class Program
 | IntUtf8Write  | Job-WLOQWX | .NET 9.0 | 6.950 ns | 0.0623 ns | 0.0552 ns | 6.943 ns |  0.90 |    0.02 |
 | LongUtf8Write | Job-DDXAAB | .NET 8.0 | 7.748 ns | 0.1710 ns | 0.1756 ns | 7.740 ns |  1.00 |    0.03 |
 | LongUtf8Write | Job-WLOQWX | .NET 9.0 | 7.825 ns | 0.1017 ns | 0.0951 ns | 7.819 ns |  1.01 |    0.03 |
-
+```
 
 ・[**ListSortBenchmark**](https://gitan.dev/?p=124)　　Listの並び替えの速度を比較したベンチマーク
 
@@ -392,6 +442,14 @@ public class Program
         return list;
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method                  | Job        | Runtime  | Mean     | Error     | StdDev    | Ratio | RatioSD |
 |------------------------ |----------- |--------- |---------:|----------:|----------:|------:|--------:|
 | ListSort                | Job-DDXAAB | .NET 8.0 | 4.401 ms | 0.0776 ms | 0.0688 ms |  1.00 |    0.02 |
@@ -400,7 +458,7 @@ public class Program
 | ListSortReverse         | Job-WLOQWX | .NET 9.0 | 4.406 ms | 0.0164 ms | 0.0145 ms |  0.99 |    0.01 |
 | ListSortReverseComparer | Job-DDXAAB | .NET 8.0 | 5.320 ms | 0.0347 ms | 0.0325 ms |  1.00 |    0.01 |
 | ListSortReverseComparer | Job-WLOQWX | .NET 9.0 | 4.613 ms | 0.0212 ms | 0.0198 ms |  0.87 |    0.01 |
-
+```
 
 ・[**ReferenceUpdateBenchmark**](https://gitan.dev/?p=171)　　APIリクエストの署名生成とリクエスト送信のパフォーマンスベンチマーク
 
@@ -455,13 +513,21 @@ public class Program
         return sb.ToString();
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method    | Job        | Runtime  | Mean       | Error    | StdDev   | Ratio | RatioSD |
 |---------- |----------- |--------- |-----------:|---------:|---------:|------:|--------:|
 | Reference | Job-DDXAAB | .NET 8.0 | 1,915.3 ns | 23.15 ns | 19.33 ns |  1.00 |    0.01 |
 | Reference | Job-WLOQWX | .NET 9.0 | 1,954.3 ns | 16.42 ns | 13.71 ns |  1.02 |    0.01 |
 | Update    | Job-DDXAAB | .NET 8.0 |   831.6 ns |  8.33 ns |  7.39 ns |  1.00 |    0.01 |
 | Update    | Job-WLOQWX | .NET 9.0 |   887.3 ns | 17.51 ns | 16.38 ns |  1.07 |    0.02 |
-
+```
 　
 ・[**CopyPerformanceBenchmark**](https://gitan.dev/?p=55)　　byte[]のCopyでSpanを使った速度比較
 
@@ -476,13 +542,21 @@ public class Program
         return result;
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method    | Job        | Runtime  | Mean     | Error    | StdDev   | Ratio | RatioSD |
 |---------- |----------- |--------- |---------:|---------:|---------:|------:|--------:|
 | CopyArray | Job-DDXAAB | .NET 8.0 | 51.27 ns | 0.846 ns | 0.791 ns |  1.00 |    0.02 |
 | CopyArray | Job-WLOQWX | .NET 9.0 | 52.23 ns | 0.596 ns | 0.528 ns |  1.02 |    0.02 |
 | CopySpan  | Job-DDXAAB | .NET 8.0 | 29.84 ns | 0.629 ns | 0.673 ns |  1.00 |    0.03 |
 | CopySpan  | Job-WLOQWX | .NET 9.0 | 29.47 ns | 0.399 ns | 0.373 ns |  0.99 |    0.02 |
-
+```
 
 ・**SpanToArrayDirectArrayBenchmark**　　longをSpan<byte>とbyte[]に変換した場合の比較ベンチマーク
  
@@ -647,6 +721,13 @@ public class Program
         return buffer[..offset].ToArray();
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method      | Job        | Runtime  | Mean     | Error    | StdDev   | Ratio | RatioSD |
 |------------ |----------- |--------- |---------:|---------:|---------:|------:|--------:|
@@ -654,7 +735,7 @@ public class Program
 | SpanToArray | Job-WLOQWX | .NET 9.0 | 12.86 ns | 0.095 ns | 0.085 ns |  1.04 |    0.01 |
 | DirectArray | Job-DDXAAB | .NET 8.0 | 11.84 ns | 0.067 ns | 0.059 ns |  1.00 |    0.01 |
 | DirectArray | Job-WLOQWX | .NET 9.0 | 12.59 ns | 0.271 ns | 0.333 ns |  1.06 |    0.03 |
-
+```
 
 ・[**StreamCopyBenchmark**](https://gitan.dev/?p=180)　　Streamのデータを読み込む方法を比較したベンチマーク
 
@@ -669,6 +750,14 @@ public class Program
         return Source.ToArray();
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method                    | Job        | Runtime  | Mean      | Error     | StdDev    | Median    | Ratio | RatioSD |
 |-------------------------- |----------- |--------- |----------:|----------:|----------:|----------:|------:|--------:|
 | ToArray                   | Job-DDXAAB | .NET 8.0 |  26.73 ns |  0.557 ns |  0.572 ns |  26.63 ns |  1.00 |    0.03 |
@@ -681,7 +770,7 @@ public class Program
 | MemoryStreamCopyNoBuffer  | Job-WLOQWX | .NET 9.0 |  82.76 ns |  1.648 ns |  1.618 ns |  82.43 ns |  0.91 |    0.02 |
 | StringStreamCopy          | Job-DDXAAB | .NET 8.0 | 609.81 ns | 11.380 ns | 25.217 ns | 606.42 ns |  1.00 |    0.06 |
 | StringStreamCopy          | Job-WLOQWX | .NET 9.0 | 548.01 ns | 10.706 ns | 10.514 ns | 544.07 ns |  0.90 |    0.04 |
-
+```
 
 ・[**StringDollerBenchmark**](https://gitan.dev/?p=148)　　文字列結合のパフォーマンスベンチマーク
 
@@ -703,6 +792,14 @@ public class Program
         return length;
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method        | Job        | Runtime  | Mean      | Error     | StdDev    | Ratio | RatioSD |
 |-------------- |----------- |--------- |----------:|----------:|----------:|------:|--------:|
 | StringPlus4   | Job-DDXAAB | .NET 8.0 |  9.000 ms | 0.1336 ms | 0.1591 ms |  1.00 |    0.02 |
@@ -713,7 +810,7 @@ public class Program
 | DollarFormat4 | Job-WLOQWX | .NET 9.0 |  4.891 ms | 0.0961 ms | 0.1144 ms |  0.57 |    0.01 |
 | DollarFormat5 | Job-DDXAAB | .NET 8.0 | 45.668 ms | 0.9042 ms | 0.8880 ms |  1.00 |    0.03 |
 | DollarFormat5 | Job-WLOQWX | .NET 9.0 | 27.381 ms | 0.2700 ms | 0.2526 ms |  0.60 |    0.01 |
-
+```
 
 ・[**TenToTheNConversionBenchmark**](https://gitan.dev/?p=230)　　longで10のn乗するベンチマーク
 
@@ -754,6 +851,13 @@ public class Program
         return baseNumber * powerSpan[power];
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method                  | Job        | Runtime  | Mean       | Error     | StdDev    | Median     | Ratio | RatioSD |
 |------------------------ |----------- |--------- |-----------:|----------:|----------:|-----------:|------:|--------:|
@@ -773,7 +877,7 @@ public class Program
 | ArrayBench              | Job-WLOQWX | .NET 9.0 |  0.2492 ns | 0.0266 ns | 0.0284 ns |  0.2434 ns |  0.95 |    0.24 |
 | RosBench                | Job-DDXAAB | .NET 8.0 |  0.2407 ns | 0.0300 ns | 0.0411 ns |  0.2354 ns |  1.03 |    0.25 |
 | RosBench                | Job-WLOQWX | .NET 9.0 |  0.2546 ns | 0.0277 ns | 0.0447 ns |  0.2346 ns |  1.09 |    0.27 |
-
+```
 
 ・**ToStringToArrayBenchmark**　　数値を文字列やバイト配列に変換する際のパフォーマンスベンチマーク
 
@@ -1049,6 +1153,14 @@ public class Program
         return (_buffer, offset);
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method                 | Job        | Runtime  | Mean       | Error     | StdDev    | Ratio | RatioSD |
 |----------------------- |----------- |--------- |-----------:|----------:|----------:|------:|--------:|
 | DoubleToString         | Job-DDXAAB | .NET 8.0 | 107.245 ns | 2.0928 ns | 2.1492 ns |  1.00 |    0.03 |
@@ -1069,6 +1181,13 @@ public class Program
     public long A_DateTime_Now_TimeSpan_TotalMilliseconds() =>
         (long)(DateTime.Now.ToUniversalTime().Subtract(_unixTime_BaseTime).TotalMilliseconds);
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method                                         | Job        | Runtime  | Mean     | Error    | StdDev   | Ratio |
 |----------------------------------------------- |----------- |--------- |---------:|---------:|---------:|------:|
@@ -1084,7 +1203,7 @@ public class Program
 | D_DateTime_UtcNow_SelfCalc                     | Job-QHJRNO | .NET 8.0 | 28.03 ns | 0.228 ns | 0.213 ns |  1.00 |
 | D_DateTime_UtcNow_SelfCalc                     | Job-POTQGX | .NET 9.0 | 28.22 ns | 0.174 ns | 0.154 ns |  1.01 |
 | D_DateTime_UtcNow_SelfCalc                     | InProcess  | .NET 9.0 | 29.63 ns | 0.101 ns | 0.094 ns |  1.06 |
-
+```
 
 ・[**Utf8JsonBenchmark**](https://gitan.dev/?p=320)　　Utf8文字列の作り方とパフォーマンス
 
@@ -1126,6 +1245,14 @@ public class Program
         return buffer[..offset];
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
 | Method                           | Job        | Runtime  | Mean      | Error    | StdDev   | Ratio | RatioSD |
 |--------------------------------- |----------- |--------- |----------:|---------:|---------:|------:|--------:|
 | GetBytes_StringSomeAdd           | Job-ZUTAWM | .NET 8.0 | 212.34 ns | 1.512 ns | 1.263 ns |  1.00 |    0.01 |
@@ -1152,7 +1279,7 @@ public class Program
 | GetSpan_Utf8TryWriteDollarUtf8   | Job-ZUTAWM | .NET 8.0 |  84.79 ns | 0.741 ns | 0.693 ns |  1.00 |    0.01 |
 | GetSpan_Utf8TryWriteDollarUtf8   | Job-XLZJOB | .NET 9.0 |  84.45 ns | 1.146 ns | 0.957 ns |  1.00 |    0.01 |
 | GetSpan_Utf8TryWriteDollarUtf8   | InProcess  | .NET 9.0 |  96.31 ns | 1.387 ns | 1.297 ns |  1.14 |    0.02 |
-
+```
 
 ・[**VariousBenchmark**](https://gitan.dev/?p=109)　　C#のいろいろな、遅くなる要素のベンチマーク
 
@@ -1174,6 +1301,13 @@ public class Program
         return sum;
     }
 
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.2454)
+AMD Ryzen 9 5900HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.101
+  [Host]   : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2 [AttachedDebugger]
+  .NET 8.0 : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 
 | Method                                 | Job      | Runtime  | Mean       | Error      | StdDev     |
 |--------------------------------------- |--------- |--------- |-----------:|-----------:|-----------:|
@@ -1217,5 +1351,6 @@ public class Program
 | MakeUtf8Abcde_StaticByteArrayBench     | .NET 9.0 | .NET 9.0 | 252.715 ms |  3.5583 ms |  3.3284 ms |
 | MakeUtf8Abcde_StaticByteArraySpanBench | .NET 8.0 | .NET 8.0 | 161.314 ms |  3.0117 ms |  5.1950 ms |
 | MakeUtf8Abcde_StaticByteArraySpanBench | .NET 9.0 | .NET 9.0 | 160.378 ms |  3.1420 ms |  5.4197 ms |
+```
 
 ※IntLockClassBenchは.net9.0から実装なので.net8.0は計測できない
