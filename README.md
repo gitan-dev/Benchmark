@@ -1174,43 +1174,48 @@ public class Program
         return sum;
     }
 
-| Method                                 | Job        | Runtime  | Mean       | Error     | StdDev    | Median     | Ratio | RatioSD |
-|--------------------------------------- |----------- |--------- |-----------:|----------:|----------:|-----------:|------:|--------:|
-| IntBench                               | Job-DDXAAB | .NET 8.0 |   2.314 ms | 0.0383 ms | 0.0320 ms |   2.308 ms |  1.00 |    0.02 |
-| IntBench                               | Job-WLOQWX | .NET 9.0 |   2.342 ms | 0.0238 ms | 0.0223 ms |   2.350 ms |  1.01 |    0.02 |
-| DoubleBench                            | Job-DDXAAB | .NET 8.0 |   6.842 ms | 0.0648 ms | 0.0541 ms |   6.832 ms |  1.00 |    0.01 |
-| DoubleBench                            | Job-WLOQWX | .NET 9.0 |   6.875 ms | 0.0213 ms | 0.0189 ms |   6.880 ms |  1.00 |    0.01 |
-| IntNoInlineBench                       | Job-DDXAAB | .NET 8.0 |  13.839 ms | 0.1585 ms | 0.1483 ms |  13.784 ms |  1.00 |    0.01 |
-| IntNoInlineBench                       | Job-WLOQWX | .NET 9.0 |  11.537 ms | 0.1396 ms | 0.1238 ms |  11.494 ms |  0.83 |    0.01 |
-| IntStructBench                         | Job-DDXAAB | .NET 8.0 |   2.296 ms | 0.0264 ms | 0.0247 ms |   2.297 ms |  1.00 |    0.01 |
-| IntStructBench                         | Job-WLOQWX | .NET 9.0 |   2.281 ms | 0.0130 ms | 0.0122 ms |   2.277 ms |  0.99 |    0.01 |
-| IntClassBench                          | Job-DDXAAB | .NET 8.0 |  83.612 ms | 1.6011 ms | 2.0819 ms |  83.491 ms |  1.00 |    0.03 |
-| IntClassBench                          | Job-WLOQWX | .NET 9.0 |  97.461 ms | 1.8724 ms | 2.6854 ms |  97.364 ms |  1.17 |    0.04 |
-| IntBoxingBench                         | Job-DDXAAB | .NET 8.0 |  83.680 ms | 1.5542 ms | 3.0313 ms |  83.179 ms |  1.00 |    0.05 |
-| IntBoxingBench                         | Job-WLOQWX | .NET 9.0 |  47.736 ms | 0.1882 ms | 0.1760 ms |  47.688 ms |  0.57 |    0.02 |
-| IntSubClassVirtualBench                | Job-DDXAAB | .NET 8.0 |  82.582 ms | 1.5723 ms | 2.5833 ms |  81.553 ms |  1.00 |    0.04 |
-| IntSubClassVirtualBench                | Job-WLOQWX | .NET 9.0 |  48.385 ms | 0.5909 ms | 0.5527 ms |  48.387 ms |  0.59 |    0.02 |
-| IntSubClassVirtualBench2               | Job-DDXAAB | .NET 8.0 |   5.824 ms | 0.0938 ms | 0.0832 ms |   5.802 ms |  1.00 |    0.02 |
-| IntSubClassVirtualBench2               | Job-WLOQWX | .NET 9.0 |   5.093 ms | 0.0423 ms | 0.0330 ms |   5.096 ms |  0.87 |    0.01 |
-| IntSubClassSealedVirtualBench          | Job-DDXAAB | .NET 8.0 |  81.708 ms | 1.2712 ms | 1.0615 ms |  81.516 ms |  1.00 |    0.02 |
-| IntSubClassSealedVirtualBench          | Job-WLOQWX | .NET 9.0 |  47.733 ms | 0.2933 ms | 0.2600 ms |  47.706 ms |  0.58 |    0.01 |
-| IntInterfaceVirtualBench               | Job-DDXAAB | .NET 8.0 |  80.893 ms | 1.5595 ms | 1.3824 ms |  80.523 ms |  1.00 |    0.02 |
-| IntInterfaceVirtualBench               | Job-WLOQWX | .NET 9.0 |  47.744 ms | 0.1723 ms | 0.1527 ms |  47.707 ms |  0.59 |    0.01 |
-| IntLockBench                           | Job-DDXAAB | .NET 8.0 |  51.808 ms | 0.9848 ms | 0.9212 ms |  51.456 ms |  1.00 |    0.02 |
-| IntLockBench                           | Job-WLOQWX | .NET 9.0 |  57.983 ms | 1.1418 ms | 2.0295 ms |  57.511 ms |  1.12 |    0.04 |
-| AsyncAwaitIntBench                     | Job-DDXAAB | .NET 8.0 |  69.712 ms | 1.3880 ms | 2.7398 ms |  68.555 ms |  1.00 |    0.05 |
-| AsyncAwaitIntBench                     | Job-WLOQWX | .NET 9.0 |  65.891 ms | 0.9265 ms | 0.7234 ms |  65.873 ms |  0.95 |    0.04 |
-| AwaitFromResultIntBench                | Job-DDXAAB | .NET 8.0 |  16.803 ms | 0.2242 ms | 0.2098 ms |  16.842 ms |  1.00 |    0.02 |
-| AwaitFromResultIntBench                | Job-WLOQWX | .NET 9.0 |  16.158 ms | 0.3217 ms | 0.2852 ms |  16.070 ms |  0.96 |    0.02 |
-| AsyncAwaitValueTaskIntBench            | Job-DDXAAB | .NET 8.0 |  64.742 ms | 1.1140 ms | 1.1439 ms |  64.872 ms |  1.00 |    0.02 |
-| AsyncAwaitValueTaskIntBench            | Job-WLOQWX | .NET 9.0 |  62.070 ms | 1.0656 ms | 0.8898 ms |  61.713 ms |  0.96 |    0.02 |
-| AwaitFromResultValueTaskIntBench       | Job-DDXAAB | .NET 8.0 |  16.824 ms | 0.1053 ms | 0.0934 ms |  16.837 ms |  1.00 |    0.01 |
-| AwaitFromResultValueTaskIntBench       | Job-WLOQWX | .NET 9.0 |  16.266 ms | 0.0989 ms | 0.0925 ms |  16.283 ms |  0.97 |    0.01 |
-| MakeUtf8Abcde_StringBench              | Job-DDXAAB | .NET 8.0 | 508.657 ms | 4.4464 ms | 4.1592 ms | 509.406 ms |  1.00 |    0.01 |
-| MakeUtf8Abcde_StringBench              | Job-WLOQWX | .NET 9.0 | 352.461 ms | 2.0186 ms | 1.7895 ms | 352.188 ms |  0.69 |    0.01 |
-| MakeUtf8Abcde_StaticStringBench        | Job-DDXAAB | .NET 8.0 | 526.810 ms | 8.9088 ms | 7.8974 ms | 530.097 ms |  1.00 |    0.02 |
-| MakeUtf8Abcde_StaticStringBench        | Job-WLOQWX | .NET 9.0 | 449.476 ms | 2.3716 ms | 2.2184 ms | 448.966 ms |  0.85 |    0.01 |
-| MakeUtf8Abcde_StaticByteArrayBench     | Job-DDXAAB | .NET 8.0 | 273.333 ms | 5.4398 ms | 6.4757 ms | 272.144 ms |  1.00 |    0.03 |
-| MakeUtf8Abcde_StaticByteArrayBench     | Job-WLOQWX | .NET 9.0 | 239.794 ms | 1.2212 ms | 1.1423 ms | 239.430 ms |  0.88 |    0.02 |
-| MakeUtf8Abcde_StaticByteArraySpanBench | Job-DDXAAB | .NET 8.0 | 155.113 ms | 3.0346 ms | 4.5421 ms | 154.403 ms |  1.00 |    0.04 |
-| MakeUtf8Abcde_StaticByteArraySpanBench | Job-WLOQWX | .NET 9.0 | 151.355 ms | 2.7818 ms | 2.4660 ms | 150.949 ms |  0.98 |    0.03 |
+
+| Method                                 | Job      | Runtime  | Mean       | Error      | StdDev     |
+|--------------------------------------- |--------- |--------- |-----------:|-----------:|-----------:|
+| IntBench                               | .NET 8.0 | .NET 8.0 |   2.596 ms |  0.0515 ms |  0.1028 ms |
+| IntBench                               | .NET 9.0 | .NET 9.0 |   2.423 ms |  0.0391 ms |  0.0366 ms |
+| DoubleBench                            | .NET 8.0 | .NET 8.0 |   7.045 ms |  0.0982 ms |  0.0870 ms |
+| DoubleBench                            | .NET 9.0 | .NET 9.0 |   6.948 ms |  0.0247 ms |  0.0207 ms |
+| IntNoInlineBench                       | .NET 8.0 | .NET 8.0 |  14.671 ms |  0.2921 ms |  0.3364 ms |
+| IntNoInlineBench                       | .NET 9.0 | .NET 9.0 |  12.072 ms |  0.2407 ms |  0.2866 ms |
+| IntStructBench                         | .NET 8.0 | .NET 8.0 |   2.503 ms |  0.0457 ms |  0.0880 ms |
+| IntStructBench                         | .NET 9.0 | .NET 9.0 |   2.429 ms |  0.0424 ms |  0.0435 ms |
+| IntClassBench                          | .NET 8.0 | .NET 8.0 |  89.588 ms |  1.6472 ms |  1.4602 ms |
+| IntClassBench                          | .NET 9.0 | .NET 9.0 |  52.030 ms |  1.0328 ms |  1.1051 ms |
+| IntBoxingBench                         | .NET 8.0 | .NET 8.0 |  90.626 ms |  1.7631 ms |  2.9457 ms |
+| IntBoxingBench                         | .NET 9.0 | .NET 9.0 |  52.065 ms |  0.9568 ms |  0.8950 ms |
+| IntSubClassVirtualBench                | .NET 8.0 | .NET 8.0 |  89.364 ms |  1.7565 ms |  2.4624 ms |
+| IntSubClassVirtualBench                | .NET 9.0 | .NET 9.0 |  51.825 ms |  0.8904 ms |  1.0935 ms |
+| IntSubClassVirtualBench2               | .NET 8.0 | .NET 8.0 |   6.126 ms |  0.1184 ms |  0.1316 ms |
+| IntSubClassVirtualBench2               | .NET 9.0 | .NET 9.0 |   5.402 ms |  0.1023 ms |  0.1005 ms |
+| IntSubClassSealedVirtualBench          | .NET 8.0 | .NET 8.0 |  89.590 ms |  1.7893 ms |  1.7574 ms |
+| IntSubClassSealedVirtualBench          | .NET 9.0 | .NET 9.0 |  52.483 ms |  1.0029 ms |  1.0731 ms |
+| IntInterfaceVirtualBench               | .NET 8.0 | .NET 8.0 |  88.633 ms |  1.7638 ms |  1.7323 ms |
+| IntInterfaceVirtualBench               | .NET 9.0 | .NET 9.0 |  51.850 ms |  0.5811 ms |  0.5436 ms |
+| IntObjectLockBench                     | .NET 8.0 | .NET 8.0 |  55.637 ms |  0.9580 ms |  1.5195 ms |
+| IntLockClassBench                      | .NET 8.0 | .NET 8.0 |         NA |         NA |         NA | 
+| IntLockClassBench                      | .NET 9.0 | .NET 9.0 |  45.437 ms |  0.9031 ms |  1.9823 ms |
+| IntObjectLockBench                     | .NET 9.0 | .NET 9.0 |  60.174 ms |  1.2005 ms |  2.2548 ms |
+| AsyncAwaitIntBench                     | .NET 8.0 | .NET 8.0 | 108.412 ms |  2.1606 ms |  3.2994 ms |
+| AsyncAwaitIntBench                     | .NET 9.0 | .NET 9.0 |  68.081 ms |  1.3307 ms |  2.1864 ms |
+| AwaitFromResultIntBench                | .NET 8.0 | .NET 8.0 |  17.419 ms |  0.3019 ms |  0.3230 ms |
+| AwaitFromResultIntBench                | .NET 9.0 | .NET 9.0 |  17.001 ms |  0.3197 ms |  0.3421 ms |
+| AsyncAwaitValueTaskIntBench            | .NET 8.0 | .NET 8.0 |  70.075 ms |  1.3937 ms |  3.0299 ms |
+| AsyncAwaitValueTaskIntBench            | .NET 9.0 | .NET 9.0 |  66.920 ms |  1.3256 ms |  2.1781 ms |
+| AwaitFromResultValueTaskIntBench       | .NET 8.0 | .NET 8.0 |  17.619 ms |  0.3348 ms |  0.3288 ms |
+| AwaitFromResultValueTaskIntBench       | .NET 9.0 | .NET 9.0 |  16.871 ms |  0.3001 ms |  0.2807 ms |
+| MakeUtf8Abcde_StringBench              | .NET 8.0 | .NET 8.0 | 533.238 ms | 10.3895 ms | 17.0703 ms |
+| MakeUtf8Abcde_StringBench              | .NET 9.0 | .NET 9.0 | 378.176 ms |  5.6952 ms |  5.0487 ms |
+| MakeUtf8Abcde_StaticStringBench        | .NET 8.0 | .NET 8.0 | 556.038 ms | 10.8551 ms | 12.5007 ms |
+| MakeUtf8Abcde_StaticStringBench        | .NET 9.0 | .NET 9.0 | 489.077 ms |  9.4713 ms | 11.6316 ms |
+| MakeUtf8Abcde_StaticByteArrayBench     | .NET 8.0 | .NET 8.0 | 299.827 ms |  5.9924 ms | 13.4029 ms |
+| MakeUtf8Abcde_StaticByteArrayBench     | .NET 9.0 | .NET 9.0 | 252.715 ms |  3.5583 ms |  3.3284 ms |
+| MakeUtf8Abcde_StaticByteArraySpanBench | .NET 8.0 | .NET 8.0 | 161.314 ms |  3.0117 ms |  5.1950 ms |
+| MakeUtf8Abcde_StaticByteArraySpanBench | .NET 9.0 | .NET 9.0 | 160.378 ms |  3.1420 ms |  5.4197 ms |
+
+※IntLockClassBenchは.net9.0から実装なので.net8.0は計測できない
